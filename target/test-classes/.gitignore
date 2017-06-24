@@ -19,4 +19,3 @@ hs_err_pid*
 .idea/workspace.xml
 .idea/libraries/org_thymeleaf_thymeleaf_spring4_Release.xml
 .idea/libraries/org_thymeleaf_thymeleaf_Release.xml
-/.idea
