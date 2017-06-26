@@ -15,10 +15,10 @@ import javax.management.MXBean;
 @Configuration
 class KnightConfig {
 
-    @Bean
+    /*@Bean
     public Knight knight(){
         return new BraveKnight(quest());
-    }
+    }*/
 
     @Bean
     public Quest quest (){
