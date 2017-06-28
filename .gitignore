@@ -13,12 +13,4 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
-.idea/workspace.xml
-.idea/libraries/org_thymeleaf_thymeleaf_Release.xml
-.idea/libraries/org_thymeleaf_thymeleaf_spring4_Release.xml
-.idea/workspace.xml
-.idea/libraries/org_thymeleaf_thymeleaf_spring4_Release.xml
-.idea/libraries/org_thymeleaf_thymeleaf_Release.xml
-/.idea
-.idea
 .idea
