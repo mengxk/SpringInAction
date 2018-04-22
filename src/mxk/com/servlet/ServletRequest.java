@@ -64,10 +64,35 @@ public class ServletRequest extends HttpServlet {
 
     /**
      * 返回ip地址对应的物理地址
+     *
      * @param ip
      * @return
      */
-    private String getAddress(String ip){
+    private String getAddress(String ip) {
         return IpUtil.getIpAddress(ip);
+    }
+
+    /**
+     * 返回客户端操作系统
+     *
+     * @param userAgent
+     * @return
+     */
+    private String getOS(String userAgent) {
+        String result = "";
+        if (userAgent.indexOf("Windowx NT 5.1") > 0) {
+            result = "Windows XP";
+        } else if (userAgent.indexOf("Windows 98") > 0) {
+            result = "Windows 98";
+        } else if (userAgent.indexOf("Windows NT 5.0") > 0) {
+            result = "Windows 2000";
+        } else if (userAgent.indexOf("Linux") > 0) {
+            result = "Linux";
+        } else if (userAgent.indexOf("Unix") > 0) {
+            result = "Unix";
+        } else {
+            result = "未知";
+        }
+        return result;
     }
 }
