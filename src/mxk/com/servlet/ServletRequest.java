@@ -1,6 +1,7 @@
 package mxk.com.servlet;
 
 import javax.servlet.http.HttpServlet;
+import java.util.Locale;
 
 /**
  * Created by 10056 on 2018/4/22.
@@ -38,5 +39,23 @@ public class ServletRequest extends HttpServlet {
         return result;
     }
 
-    
+    /**
+     * 返回客户端语言环境名称
+     *
+     * @param locale
+     * @return
+     */
+    private String getLocale(Locale locale) {
+        String result = "";
+        if (locale.equals(Locale.SIMPLIFIED_CHINESE)) {
+            result = "简体中文";
+        } else if (locale.equals(Locale.TRADITIONAL_CHINESE)) {
+            result = "繁体中文";
+        } else if (locale.equals(Locale.ENGLISH)) {
+            result = "英文";
+        } else if (locale.equals(Locale.JAPANESE)) {
+            result = "日文";
+        }
+        return result;
+    }
 }
