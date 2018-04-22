@@ -1,5 +1,8 @@
 package mxk.com.servlet;
 
+import mxk.com.util.IpUtil;
+import sun.net.util.IPAddressUtil;
+
 import javax.servlet.http.HttpServlet;
 import java.util.Locale;
 
@@ -57,5 +60,14 @@ public class ServletRequest extends HttpServlet {
             result = "日文";
         }
         return result;
+    }
+
+    /**
+     * 返回ip地址对应的物理地址
+     * @param ip
+     * @return
+     */
+    private String getAddress(String ip){
+        return IpUtil.getIpAddress(ip);
     }
 }
