@@ -4,6 +4,10 @@ import mxk.com.util.IpUtil;
 import sun.net.util.IPAddressUtil;
 
 import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.UnsupportedEncodingException;
+import java.security.Principal;
 import java.util.Locale;
 
 /**
@@ -94,5 +98,61 @@ public class ServletRequest extends HttpServlet {
             result = "未知";
         }
         return result;
+    }
+
+    public void doGet(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws UnsupportedEncodingException {
+        //设置request编码方式
+        httpServletRequest.setCharacterEncoding("UTF-8");
+        //设置response编码方式
+        httpServletResponse.setCharacterEncoding("UTF-8");
+        //设置文档类型为HTML类型
+        httpServletResponse.setContentType("text/html");
+        String authType = httpServletRequest.getAuthType();
+        //本地ip，即服务器ip
+        String localAddr = httpServletRequest.getLocalAddr();
+        //本地名称，即服务器名称
+        String localName = httpServletRequest.getLocalName();
+        //本地端口号
+        int localPort = httpServletRequest.getLocalPort();
+        //用户的语言环境
+        Locale locale = httpServletRequest.getLocale();
+        //context路径
+        String contextPath = httpServletRequest.getContextPath();
+        //GET还是POST
+        String method = httpServletRequest.getMethod();
+        String pathInfo = httpServletRequest.getPathInfo();
+        String pathTranslated = httpServletRequest.getPathTranslated();
+        //HTTP协议
+        String protcol = httpServletRequest.getProtocol();
+        //查询字符串，即？后面的字符串
+        String queryString = httpServletRequest.getQueryString();
+        //远程ip，即客户端ip
+        String remoteAddr = httpServletRequest.getRemoteAddr();
+        //远程端口，即客户端端口
+        int port = httpServletRequest.getRemotePort();
+        //远程用户
+        String remoteUser = httpServletRequest.getRemoteUser();
+        //客户端session的id
+        String requestedSessionId = httpServletRequest.getRequestedSessionId();
+        //用户请求的URI
+        String requestURI = httpServletRequest.getRequestURI();
+        //用户请求的URL
+        StringBuffer requestURL = httpServletRequest.getRequestURL();
+        //协议头，这里为http
+        String scheme = httpServletRequest.getScheme();
+        //服务器名称
+        String serverName = httpServletRequest.getServerName();
+        //服务器端口
+        int serverPort = httpServletRequest.getServerPort();
+        //Servlet的路径
+        String servletPath = httpServletRequest.getServletPath();
+        Principal principal = httpServletRequest.getUserPrincipal();
+        //浏览器支持的格式
+        String accept = httpServletRequest.getHeader("accept");
+        //从哪个页面单击链接到了本页
+        String referer = httpServletRequest.getHeader("referer");
+        //User Agent信息，包括操作系统类型及版本号、浏览器类型及版本号等
+        String userAgent = httpServletRequest.getHeader("user-agent");
+        String serverInfo = this.getServletContext().getServerInfo();
     }
 }
